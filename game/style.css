@@ -1,0 +1,55 @@
+/* LUMENFALL page shell: the canvas owns the screen, centered on a night
+   backdrop, scaled to fit the window while keeping its 16:9 shape. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #070818 radial-gradient(ellipse at 50% 30%, #141038 0%, #070818 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, Geneva, sans-serif;
+  overflow: hidden;
+}
+
+#stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: min(100vw, calc((100vh - 44px) * 16 / 9));
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#game {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 2px rgba(255, 209, 102, 0.35),
+    0 0 44px rgba(109, 75, 216, 0.45),
+    0 18px 50px rgba(0, 0, 0, 0.6);
+  cursor: crosshair;
+  background: #0a0e24;
+  touch-action: none;
+}
+
+#hint {
+  color: #8d83b8;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  user-select: none;
+}
